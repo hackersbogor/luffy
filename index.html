@@ -1,0 +1,368 @@
+{
+  "Visibility": "VISIBLE",
+  "Bypass1": "sed -i 's/BanReasonIdUrlno find BanReason config, reason:T_21_HYL_BANNED_OTHERSReasonIdReason/NoBanReasonIdUrlno find NoBanReason config, reason:T_21_HYL_NOBANNED_OTHERSReasonIdReason/g' /storage/emulated/0/Android/data/com.dts.freefireth/files/il2cpp/Metadata/global-metadata.dat",
+  "Bypass2": "sed -i 's/CACHE_CLOSEGGMES_CACHE_CLOSESYSTEMFONTS_BLACKLISTSYSTEMFONT/CACHE_CLOSEGGMES_CACHE_CLOSESYSTEMFONTS_BLACKLISTSYSTEMFONT_NOBLACKLISTSYTEMFONT/g' /storage/emulated/0/Android/data/com.dts.freefireth/files/il2cpp/Metadata/global-metadata.dat",
+  "AimbotON": "sed -i 's/bone_Hips/bone_Neck/g' /storage/emulated/0/Android/data/com.dts.freefireth/files/il2cpp/Metadata/global-metadata.dat",
+  "AimbotOFF": "sed -i 's/bone_Neck/bone_Hips/g' /storage/emulated/0/Android/data/com.dts.freefireth/files/il2cpp/Metadata/global-metadata.dat",
+  "MagicbulleON": "sed -i 's/VFX_INGAME_LASER_TDM_RED/INGAME_PLAYER_SNIPER_COLLIDER/g' /storage/emulated/0/Android/data/com.dts.freefireth/files/il2cpp/Metadata/global-metadata.dat
+sed -i 's/VFX_INGAME_LASER_TDM_GREEN/INGAME_PLAYER_SNIPER_COLLIDER/g' /storage/emulated/0/Android/data/com.dts.freefireth/files/il2cpp/Metadata/global-metadata.dat
+sed -i 's/VFX_Ingame_Laser_Purple/INGAME_PLAYER_SNIPER_COLLIDER/g' /storage/emulated/0/Android/data/com.dts.freefireth/files/il2cpp/Metadata/global-metadata.dat
+file_path="/storage/emulated/0/Android/data/com.dts.freefireth/files/il2cpp/Metadata/global-metadata.dat"
+
+# Cari semua offset "INGAME_PLAYER_SNIPER_COLLIDER"
+grep -abo "INGAME_PLAYER_SNIPER_COLLIDER" "$file_path" | cut -d: -f1 | while read seek_value; do
+    # Ganti dengan "INGAME_EGG_XMAS01" (17 byte)
+    echo -n "INGAME_EGG_XMAS01" | dd of="$file_path" bs=1 seek="$seek_value" conv=notrunc status=none
+
+    # Hitung panjang string lama (29 byte)
+    old_length=29
+    new_length=17
+    fill_length=$((old_length - new_length))  # Hitung sisa byte yang perlu diisi zero
+
+    # Fill zero sisa byte setelah string baru
+    dd if=/dev/zero of="$file_path" bs=1 count="$fill_length" seek=$((seek_value + new_length)) conv=notrunc status=none
+done",
+  "MagicbulleOFF": "file_path="/storage/emulated/0/Android/data/com.dts.freefireth/files/il2cpp/Metadata/global-metadata.dat"
+
+# Cari semua offset "INGAME_EGG_XMAS01"
+grep -abo "INGAME_EGG_XMAS01" "$file_path" | cut -d: -f1 | while read seek_value; do
+    # Ganti dengan "INGAME_PLAYER_SNIPER_COLLIDER" (27 byte)
+    echo -n "INGAME_PLAYER_SNIPER_COLLIDER" | dd of="$file_path" bs=1 seek="$seek_value" conv=notrunc status=none
+
+    # Hitung panjang string lama (17 byte)
+    old_length=17
+    new_length=29
+    fill_length=$((old_length - new_length))  # Hitung sisa byte yang perlu diisi zero
+
+    # Fill zero sisa byte setelah string baru
+    dd if=/dev/zero of="$file_path" bs=1 count="$fill_length" seek=$((seek_value + new_length)) conv=notrunc status=none
+done",
+  "HackcameraON": "file_path="/storage/emulated/0/Android/data/com.dts.freefireth/files/il2cpp/Metadata/global-metadata.dat"
+
+# Cari semua offset "FollowCamera"
+grep -abo "FollowCamera" "$file_path" | cut -d: -f1 | while read seek_value; do
+    # Ganti dengan "MonkeyDLuffy" (12 byte)
+    echo -n "MonkeyDLuffy" | dd of="$file_path" bs=1 seek="$seek_value" conv=notrunc status=none
+
+    # Hitung panjang string lama (12 byte)
+    old_length=12
+    new_length=12
+    fill_length=$((old_length - new_length))  # Hitung sisa byte yang perlu diisi zero
+
+    # Fill zero sisa byte setelah string baru
+    dd if=/dev/zero of="$file_path" bs=1 count="$fill_length" seek=$((seek_value + new_length)) conv=notrunc status=none
+done",
+  "HackcameraOFF": "file_path="/storage/emulated/0/Android/data/com.dts.freefireth/files/il2cpp/Metadata/global-metadata.dat"
+
+# Cari semua offset "MonkeyDLuffy"
+grep -abo "MonkeyDLuffy" "$file_path" | cut -d: -f1 | while read seek_value; do
+    # Ganti dengan "FollowCamera" (12 byte)
+    echo -n "FollowCamera" | dd of="$file_path" bs=1 seek="$seek_value" conv=notrunc status=none
+
+    # Hitung panjang string lama (12 byte)
+    old_length=12
+    new_length=12
+    fill_length=$((old_length - new_length))  # Hitung sisa byte yang perlu diisi zero
+
+    # Fill zero sisa byte setelah string baru
+    dd if=/dev/zero of="$file_path" bs=1 count="$fill_length" seek=$((seek_value + new_length)) conv=notrunc status=none
+done",
+  "HologramON": "code",
+  "HologramOFF": "code",
+  "EspshopON": "code",
+  "EspshopOFF": "code",
+  "EspboxON": "code",
+  "EspboxOFF": "code",
+  "EspantenaON": "sed -i 's/INGAME_EGG_XMAS01/INGAME_PLAYER_SNIPER_COLLIDER/g' /storage/emulated/0/Android/data/com.dts.freefireth/files/il2cpp/Metadata/global-metadata.dat
+sed -i 's/VFX_INGAME_LASER_TDM_GREEN/INGAME_PLAYER_SNIPER_COLLIDER/g' /storage/emulated/0/Android/data/com.dts.freefireth/files/il2cpp/Metadata/global-metadata.dat
+sed -i 's/VFX_Ingame_Laser_Purple/INGAME_PLAYER_SNIPER_COLLIDER/g' /storage/emulated/0/Android/data/com.dts.freefireth/files/il2cpp/Metadata/global-metadata.dat
+file_path="/storage/emulated/0/Android/data/com.dts.freefireth/files/il2cpp/Metadata/global-metadata.dat"
+
+# Cari semua offset "INGAME_PLAYER_SNIPER_COLLIDER"
+grep -abo "INGAME_PLAYER_SNIPER_COLLIDER" "$file_path" | cut -d: -f1 | while read seek_value; do
+    # Ganti dengan "VFX_Ingame_Laser_Purple" (23 byte)
+    echo -n "VFX_Ingame_Laser_Purple" | dd of="$file_path" bs=1 seek="$seek_value" conv=notrunc status=none
+
+    # Hitung panjang string lama (29 byte)
+    old_length=29
+    new_length=23
+    fill_length=$((old_length - new_length))  # Hitung sisa byte yang perlu diisi zero
+
+    # Fill zero sisa byte setelah string baru
+    dd if=/dev/zero of="$file_path" bs=1 count="$fill_length" seek=$((seek_value + new_length)) conv=notrunc status=none
+done",
+  "EspantenaOFF": "file_path="/storage/emulated/0/Android/data/com.dts.freefireth/files/il2cpp/Metadata/global-metadata.dat"
+
+# Cari semua offset "VFX_Ingame_Laser_Purple"
+grep -abo "VFX_Ingame_Laser_Purple" "$file_path" | cut -d: -f1 | while read seek_value; do
+    # Ganti dengan "INGAME_PLAYER_SNIPER_COLLIDER" (27 byte)
+    echo -n "INGAME_PLAYER_SNIPER_COLLIDER" | dd of="$file_path" bs=1 seek="$seek_value" conv=notrunc status=none
+
+    # Hitung panjang string lama (26 byte)
+    old_length=23
+    new_length=29
+    fill_length=$((old_length - new_length))  # Hitung sisa byte yang perlu diisi zero
+
+    # Fill zero sisa byte setelah string baru
+    dd if=/dev/zero of="$file_path" bs=1 count="$fill_length" seek=$((seek_value + new_length)) conv=notrunc status=none
+done",
+  "InvisibleGlowallON": "file_path="/storage/emulated/0/Android/data/com.dts.freefireth/files/il2cpp/Metadata/global-metadata.dat"
+
+# Cari semua offset "INGAME_GLOOSHIELD_BUNKER"
+grep -abo "INGAME_GLOOSHIELD_BUNKER" "$file_path" | cut -d: -f1 | while read seek_value; do
+    # Ganti dengan "VFX_GLOO_THUNDER" (16 byte)
+    echo -n "VFX_GLOO_THUNDER" | dd of="$file_path" bs=1 seek="$seek_value" conv=notrunc status=none
+
+    # Hitung panjang string lama (24 byte)
+    old_length=24
+    new_length=16
+    fill_length=$((old_length - new_length))  # Hitung sisa byte yang perlu diisi zero
+
+    # Fill zero sisa byte setelah string baru
+    dd if=/dev/zero of="$file_path" bs=1 count="$fill_length" seek=$((seek_value + new_length)) conv=notrunc status=none
+done",
+  "InvisibleGlowallOFF": "file_path="/storage/emulated/0/Android/data/com.dts.freefireth/files/il2cpp/Metadata/global-metadata.dat"
+
+# Cari semua offset "VFX_GLOO_THUNDER"
+grep -abo "VFX_GLOO_THUNDER" "$file_path" | cut -d: -f1 | while read seek_value; do
+    # Ganti dengan "INGAME_GLOOSHIELD_BUNKER" (27 byte)
+    echo -n "INGAME_GLOOSHIELD_BUNKER" | dd of="$file_path" bs=1 seek="$seek_value" conv=notrunc status=none
+
+    # Hitung panjang string lama (16 byte)
+    old_length=16
+    new_length=24
+    fill_length=$((old_length - new_length))  # Hitung sisa byte yang perlu diisi zero
+
+    # Fill zero sisa byte setelah string baru
+    dd if=/dev/zero of="$file_path" bs=1 count="$fill_length" seek=$((seek_value + new_length)) conv=notrunc status=none
+done",
+  "FlywukongON": "file_path="/storage/emulated/0/Android/data/com.dts.freefireth/files/il2cpp/Metadata/global-metadata.dat"
+
+# Cari semua offset "INGAME_ITEM_CAMOUFLAGE_BUSH"
+grep -abo "INGAME_ITEM_CAMOUFLAGE_BUSH" "$file_path" | cut -d: -f1 | while read seek_value; do
+    # Ganti dengan "INGAME_FOOTBALL" (15 byte)
+    echo -n "INGAME_FOOTBALL" | dd of="$file_path" bs=1 seek="$seek_value" conv=notrunc status=none
+
+    # Hitung panjang string lama (27 byte)
+    old_length=27
+    new_length=15
+    fill_length=$((old_length - new_length))  # Hitung sisa byte yang perlu diisi zero
+
+    # Fill zero sisa byte setelah string baru
+    dd if=/dev/zero of="$file_path" bs=1 count="$fill_length" seek=$((seek_value + new_length)) conv=notrunc status=none
+done",
+  "FlywukongOFF": "file_path="/storage/emulated/0/Android/data/com.dts.freefireth/files/il2cpp/Metadata/global-metadata.dat"
+
+# Cari semua offset "INGAME_FOOTBALL"
+grep -abo "INGAME_FOOTBALL" "$file_path" | cut -d: -f1 | while read seek_value; do
+    # Ganti dengan "INGAME_ITEM_CAMOUFLAGE_BUSH" (27 byte)
+    echo -n "INGAME_ITEM_CAMOUFLAGE_BUSH" | dd of="$file_path" bs=1 seek="$seek_value" conv=notrunc status=none
+
+    # Hitung panjang string lama (15 byte)
+    old_length=15
+    new_length=27
+    fill_length=$((old_length - new_length))  # Hitung sisa byte yang perlu diisi zero
+
+    # Fill zero sisa byte setelah string baru
+    dd if=/dev/zero of="$file_path" bs=1 count="$fill_length" seek=$((seek_value + new_length)) conv=notrunc status=none
+done",
+  "SeekBar1": "prev_window_state=""
+game_running=""
+
+eval "$cmd"
+
+while true; do
+	window_buffer=$(dumpsys window | grep -E 'mCurrentFocus|mFocusedApp' | grep -Eo 'com.dts.freefireth|com.dts.freefiremax')
+
+	if [ -n "$window_buffer" ]; then
+		if [ "$prev_window_state" != "active" ]; then
+			game_running="open"
+
+			cmd="cmd notification post -S bigtext -t \"KazuCheto\" \"Tag\" \"Process injecting something\""
+			eval "$cmd"
+			sleep 2
+
+			cmd="pgrep -f 'com.dts.freefireth|com.dts.freefiremax'"
+			pids=$(eval "$cmd")
+
+			for pid in $pids; do
+				t_priorities "$pid"
+				sleep 0.7
+			done
+
+			cmd="cmd notification post -S bigtext -t \"KazuCheto\" \"Tag\" \"Successfully Inject mode\""
+			wm size reset
+            wm density reset
+			eval "$cmd"
+
+		fi
+		prev_window_state="active"
+	else
+		if [ "$game_running" = "open" ]; then
+		
+			proc_buffer=$(pgrep -f 'com.dts.freefireth|com.dts.freefiremax')
+
+			if [ -z "$proc_buffer" ]; then
+				game_running=""
+				cmd="cmd notification post -S bigtext -t \"KazuCheto\" \"Tag\" \"Game Closed\""
+	            wm size reset
+                wm density reset
+				eval "$cmd"
+        sleep 1 
+			fi
+		fi
+		prev_window_state=""
+	fi
+	sleep 5
+done
+",
+  "SeekBar2": "prev_window_state=""
+game_running=""
+
+eval "$cmd"
+
+while true; do
+	window_buffer=$(dumpsys window | grep -E 'mCurrentFocus|mFocusedApp' | grep -Eo 'com.dts.freefireth|com.dts.freefiremax')
+
+	if [ -n "$window_buffer" ]; then
+		if [ "$prev_window_state" != "active" ]; then
+			game_running="open"
+
+			cmd="cmd notification post -S bigtext -t \"KazuCheto\" \"Tag\" \"Process injecting something\""
+			eval "$cmd"
+			sleep 2
+
+			cmd="pgrep -f 'com.dts.freefireth|com.dts.freefiremax'"
+			pids=$(eval "$cmd")
+
+			for pid in $pids; do
+				t_priorities "$pid"
+				sleep 0.7
+			done
+
+			cmd="cmd notification post -S bigtext -t \"KazuCheto\" \"Tag\" \"Successfully Inject mode\""
+		    wm size 1440x3220
+			eval "$cmd"
+
+		fi
+		prev_window_state="active"
+	else
+		if [ "$game_running" = "open" ]; then
+		
+			proc_buffer=$(pgrep -f 'com.dts.freefireth|com.dts.freefiremax')
+
+			if [ -z "$proc_buffer" ]; then
+				game_running=""
+				cmd="cmd notification post -S bigtext -t \"KazuCheto\" \"Tag\" \"Game Closed\""
+				wm size reset
+				eval "$cmd"
+        sleep 1 
+			fi
+		fi
+		prev_window_state=""
+	fi
+	sleep 5
+done
+",
+  "SeekBar3": "prev_window_state=""
+game_running=""
+
+eval "$cmd"
+
+while true; do
+	window_buffer=$(dumpsys window | grep -E 'mCurrentFocus|mFocusedApp' | grep -Eo 'com.dts.freefireth|com.dts.freefiremax')
+
+	if [ -n "$window_buffer" ]; then
+		if [ "$prev_window_state" != "active" ]; then
+			game_running="open"
+
+			cmd="cmd notification post -S bigtext -t \"KazuCheto\" \"Tag\" \"Process injecting something\""
+			eval "$cmd"
+			sleep 2
+
+			cmd="pgrep -f 'com.dts.freefireth|com.dts.freefiremax'"
+			pids=$(eval "$cmd")
+
+			for pid in $pids; do
+				t_priorities "$pid"
+				sleep 0.7
+			done
+
+			cmd="cmd notification post -S bigtext -t \"KazuCheto\" \"Tag\" \"Successfully Inject mode\""
+		    wm size 1620x3680
+			eval "$cmd"
+
+		fi
+		prev_window_state="active"
+	else
+		if [ "$game_running" = "open" ]; then
+		
+			proc_buffer=$(pgrep -f 'com.dts.freefireth|com.dts.freefiremax')
+
+			if [ -z "$proc_buffer" ]; then
+				game_running=""
+				cmd="cmd notification post -S bigtext -t \"KazuCheto\" \"Tag\" \"Game Closed\""
+				wm size reset
+				eval "$cmd"
+        sleep 1 
+			fi
+		fi
+		prev_window_state=""
+	fi
+	sleep 5
+done
+",
+  "SeekBar4": "prev_window_state=""
+game_running=""
+
+eval "$cmd"
+
+while true; do
+	window_buffer=$(dumpsys window | grep -E 'mCurrentFocus|mFocusedApp' | grep -Eo 'com.dts.freefireth|com.dts.freefiremax')
+
+	if [ -n "$window_buffer" ]; then
+		if [ "$prev_window_state" != "active" ]; then
+			game_running="open"
+
+			cmd="cmd notification post -S bigtext -t \"KazuCheto\" \"Tag\" \"Process injecting something\""
+			eval "$cmd"
+			sleep 2
+
+			cmd="pgrep -f 'com.dts.freefireth|com.dts.freefiremax'"
+			pids=$(eval "$cmd")
+
+			for pid in $pids; do
+				t_priorities "$pid"
+				sleep 0.7
+			done
+
+			cmd="cmd notification post -S bigtext -t \"KazuCheto\" \"Tag\" \"Successfully Inject mode\""
+		    wm size 1799x3998
+            wm density 406
+			eval "$cmd"
+
+		fi
+		prev_window_state="active"
+	else
+		if [ "$game_running" = "open" ]; then
+		
+			proc_buffer=$(pgrep -f 'com.dts.freefireth|com.dts.freefiremax')
+
+			if [ -z "$proc_buffer" ]; then
+				game_running=""
+				cmd="cmd notification post -S bigtext -t \"KazuCheto\" \"Tag\" \"Game Closed\""
+				wm size reset
+				wm density reset
+				eval "$cmd"
+        sleep 1 
+			fi
+		fi
+		prev_window_state=""
+	fi
+	sleep 5
+done
+",
+  "ApkVer": "2019117863",
+  "ApiUser": "6465907133",
+  "TokenUser": "7017760300:AAGh8SG9UhHOe0r0cyXQZ0bB-CYEWizjlrM",
+}
